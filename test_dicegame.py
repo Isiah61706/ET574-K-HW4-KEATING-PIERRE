@@ -2,7 +2,7 @@
 # Unit tests for DiceGame assignment
 
 import unittest
-from main import Die, DiceGame
+from Main import Die, DiceGame
 
 #This class test if the Die class is created correctly.
 #It basically checks if the die returns a legit number. For example, a six face die 
