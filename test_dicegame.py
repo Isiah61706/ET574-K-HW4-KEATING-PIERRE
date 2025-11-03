@@ -100,4 +100,9 @@ if __name__ == '__main__':
 def test_total_range_in_play_round(self):
         _, _, total, _ = self.game.play_round()
         self.assertIn(total, range(2, 13))
-    
+
+def test_custom_die_sides(self):
+    die = Die(sides=10)
+    for _ in range(100):
+        roll = die.roll()
+        self.assertIn(roll, range(1, 11))
