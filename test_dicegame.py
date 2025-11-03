@@ -92,8 +92,12 @@ if __name__ == '__main__':
     unittest.main()
     # --- Students: Add 3 more test cases below ---
 
-    def test_evaluate_roll_returns_string(self):
-        # Check that evaluate_roll always returns a string
-        for total in range(2, 13):
-            result = self.game.evaluate_roll(total)
-            self.assertIsInstance(result, str)
+ def test_evaluate_roll_returns_string(self):
+    for total in range(2, 13):
+        result = self.game.evaluate_roll(total)
+        self.assertIsInstance(result, str)
+
+def test_total_range_in_play_round(self):
+        _, _, total, _ = self.game.play_round()
+        self.assertIn(total, range(2, 13))
+    
