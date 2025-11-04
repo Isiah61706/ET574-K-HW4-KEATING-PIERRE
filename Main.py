@@ -1,3 +1,6 @@
+#Name: Isiah Keating-Pierre
+#QCC ID: 24603122
+
 import random
 
 class Die: 

@@ -1,5 +1,7 @@
 # test_dicegame.py
 # Unit tests for DiceGame assignment
+#Name: Isiah Keating-Pierre
+#QCC ID: 24603122
 
 import unittest
 from Main import Die, DiceGame
