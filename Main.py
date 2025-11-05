@@ -14,6 +14,7 @@ class DiceGame:
     def __init__(self):
         self.die1 = Die()
         self.die2 = Die()
+        self.history = []
     def evaluate_roll(self, total):
         if total in [7, 11]:
             return "Win"
@@ -27,10 +28,13 @@ class DiceGame:
         roll2 = self.die2.roll()
         total = roll1 + roll2
         result = self.evaluate_roll(total)
+        self.history.append((roll1, roll2, total, result))
         return roll1, roll2, total, result
 
 def main():
     game = DiceGame()
+    history = []
+    
     print("Welcome to the Dice Game!")
     
     while True:
@@ -44,9 +48,18 @@ def main():
             roll1, roll2, total, result = game.play_round()
             print(f"\nYou rolled {roll1} and {roll2}. Total = {total}")
             print(f"Result: {result}")
+            history.append((roll1, roll2, total, result))
+        
         elif choice == '2':
-            print("Thanks for playing! Goodbye!")
-            break
+            print("\nThanks for playing! Here are your game results:\n")
+            if len(history) == 0:
+                print("No rounds played.")
+        
+            else:
+                for i, (r1, r2, total, result) in enumerate(history, start=1):
+                        print(f"Round {i}: {r1} + {r2} = {total} → {result}")
+            print("\nGoodbye!")
+            return
         else:
             print("Invalid choice. Please enter 1 or 2.")
 
